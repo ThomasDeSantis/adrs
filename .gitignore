@@ -1,0 +1,23 @@
+generated/
+docs/
+materials/
+.nmlcache/
+.chameleon_cache/
+.vs/
+**/__pycache__/
+
+# The local makefile should be ignored:
+Makefile.local
+.DS_Store
+OTTD_grid_coordinates.png
+pal_win_png.act
+palette_key.png
+PTS Industry Details.numbers
+Industry Spotlight.png
+Industry Spotlight.pxd
+**.numbers
+PTaS Industry Details.numbers
+title_image_bgf.png
+Banner Image.pxd
+PTaS Industry Details.numbers
+
