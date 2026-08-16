@@ -31,7 +31,7 @@ industry.add_tile(
     ),
 )
 
-sprite_ground = industry.add_sprite(sprite_number="GROUNDTILE_MUD_TRACKS")
+sprite_ground = industry.add_sprite(sprite_number="GROUNDSPRITE_GRASS")
 spriteset_ground_empty = industry.add_spriteset(type="empty")
 spriteset_ground_overlay = industry.add_spriteset(type="empty")
 spriteset_1 = industry.add_spriteset(
@@ -85,9 +85,10 @@ industry.add_spritelayout(
 industry.add_spritelayout(
     id="grain_farm_spritelayout_5",
     tile="grain_farm_tile_1",
-    ground_sprite=sprite_ground,
+    ground_sprite=spriteset_ground_empty,
     ground_overlay=spriteset_ground_overlay,
     building_sprites=[spriteset_5],
+    terrain_aware_ground=True,
 )
 
 industry.add_industry_layout(

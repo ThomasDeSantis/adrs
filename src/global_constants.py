@@ -150,6 +150,7 @@ tile_numeric_ids = dict(
     powder_mill_tile_2=8,
     arms_works_tile_1=9,
     naval_yard_tile_1=10,
+    naval_yard_tile_2=15,
     tank_works_tile_1=11,
     aircraft_works_tile_1=12,
     airbase_tile_1=13,

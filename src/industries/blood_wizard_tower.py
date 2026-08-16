@@ -24,7 +24,7 @@ industry.enable_in_economy("TRADE_AND_WAVES")
 
 industry.add_tile(
     id="blood_wizard_tower_tile_1",
-    location_checks=TileLocationChecks(),
+    location_checks=TileLocationChecks(disallow_slopes=True),
 )
 
 spriteset_ground = industry.add_spriteset(

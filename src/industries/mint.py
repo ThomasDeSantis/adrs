@@ -28,18 +28,36 @@ industry.add_tile(
 spriteset_ground = industry.add_spriteset(
     type="slab",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    sprites=[(10, 10, 64, 31, -31, 0)],
+spriteset_ground_overlay = industry.add_spriteset(type="empty")
+# base-set temperate Bank halves (industry gfx 58/59); OpenTTD has no mint of its own
+sprite_bank_left = industry.add_sprite(
+    sprite_number=2180,
+    zextent=25,
 )
-spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 48, -31, -18)])
+sprite_bank_right = industry.add_sprite(
+    sprite_number=2181,
+    zextent=25,
+)
+
 industry.add_spritelayout(
-    id="mint_spritelayout",
+    id="mint_spritelayout_left",
     tile="mint_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_1],
+    building_sprites=[sprite_bank_left],
 )
+industry.add_spritelayout(
+    id="mint_spritelayout_right",
+    tile="mint_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[sprite_bank_right],
+)
+
 industry.add_industry_layout(
-    id="mint_industry_layout",
-    layout=[(0, 0, "mint_spritelayout")],
+    id="mint_industry_layout_1",
+    layout=[
+        (0, 0, "mint_spritelayout_left"),
+        (1, 0, "mint_spritelayout_right"),
+    ],
 )

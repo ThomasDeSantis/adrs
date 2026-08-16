@@ -24,20 +24,39 @@ industry.add_tile(
 )
 
 spriteset_ground = industry.add_spriteset(
-    type="hard_standing_dirt",
+    type="slab",
 )
-spriteset_ground_overlay = industry.add_spriteset(
-    sprites=[(10, 10, 64, 31, -31, 0)],
+spriteset_ground_overlay = industry.add_spriteset(type="empty")
+spriteset_hangar = industry.add_spriteset(
+    sprites=[(10, 20, 64, 48, -32, -17)],
 )
-spriteset_1 = industry.add_spriteset(sprites=[(10, 60, 64, 48, -31, -18)])
+spriteset_apron = industry.add_spriteset(
+    sprites=[(90, 20, 64, 31, -32, 0)],
+)
+
 industry.add_spritelayout(
-    id="airbase_spritelayout",
+    id="airbase_spritelayout_hangar",
     tile="airbase_tile_1",
     ground_sprite=spriteset_ground,
     ground_overlay=spriteset_ground_overlay,
-    building_sprites=[spriteset_1],
+    building_sprites=[spriteset_hangar],
 )
+industry.add_spritelayout(
+    id="airbase_spritelayout_apron",
+    tile="airbase_tile_1",
+    ground_sprite=spriteset_ground,
+    ground_overlay=spriteset_ground_overlay,
+    building_sprites=[spriteset_apron],
+)
+
 industry.add_industry_layout(
-    id="airbase_industry_layout",
-    layout=[(0, 0, "airbase_spritelayout")],
+    id="airbase_industry_layout_1",
+    layout=[
+        (0, 0, "airbase_spritelayout_hangar"),
+        (0, 1, "airbase_spritelayout_hangar"),
+        (0, 2, "airbase_spritelayout_hangar"),
+        (1, 0, "airbase_spritelayout_apron"),
+        (1, 1, "airbase_spritelayout_apron"),
+        (1, 2, "airbase_spritelayout_apron"),
+    ],
 )
